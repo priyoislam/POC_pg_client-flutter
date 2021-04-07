@@ -5,6 +5,49 @@
 
 **Flutter for Web** - https://flutter.dev/docs/get-started/web
 
+**Youtube Course** - https://www.youtube.com/watch?v=x0uinJvhNxI&list=PLGH08CVnDBKbC2fN_pQWrbRFIf3qq_Jdj&index=2&t=12s&ab_channel=Academind
+
+
+**Hello World:**
+
+````dart
+import 'package:flutter/material.dart'; //package import
+
+void main() //main function {
+  runApp(MyApp()); //calling root class
+}
+
+class MyApp extends StatelessWidget { 
+  // This widget is the root of the application.
+  @override 
+  //decorator . overriding the StatelessWidget's build method . For indicating  delibarete overriding not accident. 
+  Widget build(BuildContext context) {
+    return MaterialApp( //returning basic app structure with child 
+      home: Text('Hello World!'), 
+    );
+  }
+}
+
+```` 
+
+**Notes**
+
+````dart
+Column : place its children vertically
+Row : place its children horizontally
+[] : list annotation , can have multiple widget following commas ','
+
+Statefulwidget : typically needs two classes. 2nd class extend State<1st Class Name>. State is maintain by SetState function.
+
+RaisedButton : depriciated. 
+now ElevatedButton : onpressed: takes only function or widget.
+
+Container : margin : takes Edgeinsets 
+
+const : compile time constant
+final : runtime constant ( value unclear at runtime)
+
+````
 
 **Issues**:
 
