@@ -31,9 +31,9 @@ class _userState extends State<username> {
         ),
         controller: myController,
 
-        onChanged: (text) {
-          name(text);
-        },
+        // onChanged: (text) {
+        //   //userName(text);
+        // },
         // The validator receives the text that the user has entered.
         validator: (value) {
           if (value == null || value.isEmpty) {

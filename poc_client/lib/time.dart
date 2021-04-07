@@ -73,7 +73,7 @@ class _timeState extends State<timevalue> {
                 setState(() {
                   initialIndex = index;
                 });
-                time(dropdownValue, initialIndex);
+                // time(dropdownValue, initialIndex);
               },
             ),
           ),

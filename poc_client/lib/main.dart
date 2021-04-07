@@ -3,13 +3,14 @@ import 'package:poc_client/finalpage.dart';
 import 'package:poc_client/name.dart';
 import 'package:poc_client/time.dart';
 import 'package:poc_client/locale.dart';
+import 'package:poc_client/login.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Form Validation Demo';
+    final appTitle = 'Client App Simple Demo';
 
     return MaterialApp(
       title: appTitle,
@@ -54,15 +55,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             username(),
             timevalue(),
             locale(),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  finalpage();
-                },
-                child: Text('Submit'),
-              ),
-            ),
+            loginbtn(),
           ],
         ),
       ),

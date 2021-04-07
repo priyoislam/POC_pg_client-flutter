@@ -38,7 +38,7 @@ class _localeState extends State<locale> {
                 setState(() {
                   dropdownValue = newValue!;
                 });
-                location(dropdownValue);
+                // location(dropdownValue);
               },
               items: <String>[
                 'Bangladesh',
