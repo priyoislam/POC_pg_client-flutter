@@ -6,13 +6,7 @@ import 'package:flutter/widgets.dart';
 class finalpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        // child: Column(
-        //   children: <Widget>[
-        //     // name(),
-        //   ],
-        // ),
-        );
+    return Container();
   }
 }
 
@@ -28,12 +22,12 @@ class name extends StatelessWidget {
 }
 
 class location extends StatelessWidget {
-  final String x;
+  final String? x;
   location(this.x);
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(x),
+      child: Text(x ?? ' '),
     );
   }
 }

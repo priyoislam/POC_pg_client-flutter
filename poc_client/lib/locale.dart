@@ -11,7 +11,7 @@ class locale extends StatefulWidget {
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _localeState extends State<locale> {
-  String dropdownValue = 'Bangladesh';
+  String? dropdownValue;
   int initialIndex = 0;
 
   @override

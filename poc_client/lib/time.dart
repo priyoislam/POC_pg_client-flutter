@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import './finalpage.dart';
 
-/// This is the stateful widget that the main application instantiates.
 class timevalue extends StatefulWidget {
   const timevalue({Key? key}) : super(key: key);
 
@@ -10,7 +9,6 @@ class timevalue extends StatefulWidget {
   _timeState createState() => _timeState();
 }
 
-/// This is the private State class that goes with MyStatefulWidget.
 class _timeState extends State<timevalue> {
   String? dropdownValue;
   int initialIndex = 0;
@@ -27,8 +25,6 @@ class _timeState extends State<timevalue> {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-
-        //: Border.all(width: 2.0, color: const Color(0xFFFFFFFF))
         children: [
           Flexible(
             flex: 2,

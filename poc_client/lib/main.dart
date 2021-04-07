@@ -40,16 +40,9 @@ class MyCustomFormState extends State<MyCustomForm> {
   // Note: This is a GlobalKey<FormState>,
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
-  /*void _sendDataTofinalpage(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return finalpage(myController.text);
-    }));
-  }*/
 
   @override
   Widget build(BuildContext context) {
-    //String txt = name.usernamereturn();
-    // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
       child: Center(
