@@ -1,22 +1,34 @@
 import 'package:flutter/material.dart';
-import './finalpage.dart';
 
 class username extends StatefulWidget {
   @override
-  _userState createState() => _userState();
+  userState createState() => userState();
 }
 
-class _userState extends State<username> {
+class userState extends State<username> {
   final myController = TextEditingController();
+  // @override
+  //     void initState() {
+  //       super.initState();
+  //       myController = TextEditingController();
+  //     }
+  String t = "0";
+  String text = "No Value Entered";
+
+  /*void setText() {
+    setState(() {
+      text = t;
+    });
+  }*/
+  /*void pr() {
+    print(userState().myController.text);
+  }*/
+
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
     myController.dispose();
     super.dispose();
-  }
-
-  String usernamereturn() {
-    return myController.text;
   }
 
   @override
@@ -25,23 +37,16 @@ class _userState extends State<username> {
       width: MediaQuery.of(context).size.width * .5,
       margin: EdgeInsets.all(5.0),
       child: TextFormField(
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: 'Enter Your Name',
-        ),
-        controller: myController,
-
-        // onChanged: (text) {
-        //   //userName(text);
-        // },
-        // The validator receives the text that the user has entered.
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Please enter valid name';
-          }
-          return null;
-        },
-      ),
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Enter Your Name',
+          ),
+          controller: myController,
+          onChanged: (value) {
+            setState(() {
+              //text = value;
+            });
+          }),
     );
   }
 }

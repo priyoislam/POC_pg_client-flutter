@@ -4,6 +4,7 @@ import 'package:poc_client/name.dart';
 import 'package:poc_client/time.dart';
 import 'package:poc_client/locale.dart';
 import 'package:poc_client/login.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,6 +43,9 @@ class MyCustomFormState extends State<MyCustomForm> {
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
+  username _un = username();
+  locale lc = locale();
+  timevalue tv = timevalue();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -52,10 +56,10 @@ class MyCustomFormState extends State<MyCustomForm> {
           mainAxisAlignment: MainAxisAlignment.center,
           // margin: new EdgeInsets.all(8.0),
           children: <Widget>[
-            username(),
-            timevalue(),
-            locale(),
-            loginbtn(),
+            // username(),
+            // timevalue(),
+            // locale(),
+            loginbtn(_un),
           ],
         ),
       ),

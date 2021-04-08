@@ -6,11 +6,11 @@ class locale extends StatefulWidget {
   const locale({Key? key}) : super(key: key);
 
   @override
-  _localeState createState() => _localeState();
+  localeState createState() => localeState();
 }
 
 /// This is the private State class that goes with MyStatefulWidget.
-class _localeState extends State<locale> {
+class localeState extends State<locale> {
   String? dropdownValue;
   int initialIndex = 0;
 
