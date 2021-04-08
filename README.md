@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
 
 ```` 
 
-**Notes**
+### Notes
 
 ````dart
 Column : place its children vertically
@@ -49,7 +49,12 @@ final : runtime constant ( value unclear at runtime)
 
 ````
 
-**Issues**:
+***Ephimeral State vs Application State***
+
+![](image/f1.PNG)
+
+
+### Issues:
 
 Issue 1: HAXM not installing
 
