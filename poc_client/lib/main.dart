@@ -1,10 +1,13 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
+import 'package:poc_client/data.dart';
 import 'package:poc_client/finalpage.dart';
 import 'package:poc_client/name.dart';
 import 'package:poc_client/time.dart';
 import 'package:poc_client/locale.dart';
 import 'package:poc_client/login.dart';
 import 'package:provider/provider.dart';
+import 'package:poc_client/data.dart';
 
 void main() => runApp(MyApp());
 
@@ -43,24 +46,24 @@ class MyCustomFormState extends State<MyCustomForm> {
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
-  username _un = username();
-  locale lc = locale();
-  timevalue tv = timevalue();
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          // margin: new EdgeInsets.all(8.0),
-          children: <Widget>[
-            // username(),
-            // timevalue(),
-            // locale(),
-            loginbtn(_un),
-          ],
+    return ChangeNotifierProvider(
+      create: (context) => MyData(),
+      child: Form(
+        key: _formKey,
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            // margin: new EdgeInsets.all(8.0),
+            children: <Widget>[
+              UserName(),
+              //TimeValue(),
+              //LocalValue(),
+              //Loginbtn(),
+            ],
+          ),
         ),
       ),
     );

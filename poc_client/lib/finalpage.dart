@@ -1,17 +1,20 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:poc_client/name.dart';
-
+// import 'package:provider/provider.dart';
+// import 'package:poc_client/name.dart';
+// import 'package:poc_client/data.dart';
+import 'package:flutter/foundation.dart';
 //import './name.dart';
 
-class finalpage extends StatelessWidget {
-  final username nameHolder;
-  //finalpage(this.nameHolder);
-  // finalpage({
-  //   Key? key,
-  //   @required this.nameHolder,
-  // }) : super(key: key);
-  final(this.nameHolder);
+class Finalpage extends StatelessWidget {
+  final nameHolder;
+  //String t = "hvhg";
+  //Finalpage(Key key,this.nameHolder);
+  Finalpage({
+    Key key,
+    this.nameHolder,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +22,6 @@ class finalpage extends StatelessWidget {
       child: Column(
         children: <Widget>[
           //Text(nameHolder),
-          Text(nameHolder),
-          //Text("sdhvghd"),
         ],
       ),
     );

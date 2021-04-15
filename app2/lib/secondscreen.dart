@@ -46,7 +46,7 @@ class SecondScreen extends StatelessWidget {
               )),
               Center(
                   child: Text(
-                'Area = ' + localeHolder,
+                'Country = ' + localeHolder,
                 style: TextStyle(fontSize: 22),
                 textAlign: TextAlign.center,
               )),
