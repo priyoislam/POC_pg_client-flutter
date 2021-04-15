@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-import './finalpage.dart';
+import 'package:provider/provider.dart';
+import 'package:poc_client/data.dart';
 
 class TimeValue extends StatelessWidget {
-  String? timeVal;
-  int ampmIndex = 0;
+  // String? timeVal;
+  //int ampmIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+    final data = Provider.of<MyData>(context);
     return Container(
       margin: EdgeInsets.all(5.0),
       // padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -22,11 +25,11 @@ class TimeValue extends StatelessWidget {
             flex: 2,
             fit: FlexFit.tight,
             child: DropdownButton<String>(
-              value: timeVal,
+              value: data.timeVal,
               isExpanded: true,
               hint: Text('Enter Time'),
               onChanged: (String? newValue) {
-                timeVal = newValue!;
+                data.timeVal = newValue!;
               },
               items: <String>[
                 '01.00',
@@ -57,10 +60,10 @@ class TimeValue extends StatelessWidget {
               minWidth: 50.0,
               minHeight: 30.0,
               cornerRadius: 20.0,
-              initialLabelIndex: ampmIndex,
+              initialLabelIndex: data.ampm,
               labels: ['AM', 'PM'],
               onToggle: (index) {
-                ampmIndex = index;
+                data.ampm = index;
 
                 // time(dropdownValue, initialIndex);
               },

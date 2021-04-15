@@ -11,45 +11,38 @@ import 'package:provider/provider.dart';
 class Loginbtn extends StatelessWidget {
   //var formKey = GlobalKey<FormState>();
   //username(this.formKey);
-  String nm = "22";
-
-  getItemAndNavigate(BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => Finalpage(
-                  nameHolder: nm,
-                )));
-  }
+  // String nm = "22";
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<MyData>(
-      builder: (context, data, _) => Container(
-        width: MediaQuery.of(context).size.width * .5,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  // userState().pr();
-                  //userState().setText();
-                  //userState().usernamereturn();
-                  var dat = context.watch<MyData>();
-                  nm = dat.nAme;
-                  print(nm);
-                  // getItemAndNavigate(context);
-                },
-                child: Text('Log In'),
-                style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                    textStyle:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              ),
+    final data = Provider.of<MyData>(context);
+    return Container(
+      width: MediaQuery.of(context).size.width * .5,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                //getItemAndNavigate(BuildContext context) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SecondScreen(
+                              nameHolder: data.name,
+                              timeHolder: data.timeVal,
+                              ampmHolder: data.ampm,
+                              localeHolder: data.localVal,
+                            )));
+              },
+              child: Text('Log In'),
+              style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  textStyle:
+                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

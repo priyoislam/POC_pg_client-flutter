@@ -7,7 +7,7 @@ class UserName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = Provider.of<MyData>(context, listen: false);
+    final data = Provider.of<MyData>(context);
     //String val;
     return Container(
       width: MediaQuery.of(context).size.width * .5,
@@ -20,6 +20,7 @@ class UserName extends StatelessWidget {
         controller: myController,
         onChanged: (value) {
           data.name = value;
+          //print(data.name);
         },
       ),
     );

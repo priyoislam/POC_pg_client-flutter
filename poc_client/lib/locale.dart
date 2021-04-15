@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:poc_client/finalpage.dart';
+
+import 'package:provider/provider.dart';
+import 'package:poc_client/data.dart';
 
 class LocalValue extends StatelessWidget {
-  String? localVal;
   @override
   Widget build(BuildContext context) {
+    final data = Provider.of<MyData>(context);
     return Container(
       margin: EdgeInsets.all(5.0),
       padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -20,11 +22,11 @@ class LocalValue extends StatelessWidget {
         children: [
           Flexible(
             child: DropdownButton<String>(
-              value: localVal,
+              value: data.localVal,
               isExpanded: true,
               hint: Text('Enter Location'),
               onChanged: (String? newValue) {
-                localVal = newValue!;
+                data.localVal = newValue!;
 
                 // location(dropdownValue);
               },
