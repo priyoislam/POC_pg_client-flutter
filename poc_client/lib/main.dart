@@ -6,8 +6,11 @@ import 'package:poc_client/time.dart';
 import 'package:poc_client/locale.dart';
 import 'package:poc_client/login.dart';
 import 'package:provider/provider.dart';
+import 'package:event_bus/event_bus.dart';
+import 'package:poc_client/env.dart';
 
 void main() => runApp(MyApp());
+EventBus eventBus = EventBus();
 
 class MyApp extends StatelessWidget {
   @override
@@ -43,7 +46,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   // Note: This is a GlobalKey<FormState>,
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
-
+  //EventBus eventBus = EventBus();
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -60,6 +63,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               TimeValue(),
               LocalValue(),
               Loginbtn(),
+              //Loginbtn(),
             ],
           ),
         ),
