@@ -28,6 +28,11 @@ class Loginbtn extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 //getItemAndNavigate(BuildContext context) {
+                //Environment();
+                Environment();
+                eventBus.fire(Userdata(
+                    data.name, data.timeVal, data.ampm, data.localVal));
+
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -37,8 +42,6 @@ class Loginbtn extends StatelessWidget {
                               ampmHolder: data.ampm,
                               localeHolder: data.localVal,
                             )));
-                eventBus.fire(Userdata(
-                    data.name, data.timeVal, data.ampm, data.localVal));
               },
               child: Text('Log In'),
               style: ElevatedButton.styleFrom(
