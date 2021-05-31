@@ -1,6 +1,6 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
-import 'package:poc_client/finalpage.dart';
+import 'package:poc_client/secondscreen.dart';
 // import 'package:poc_client/name.dart';
 // import 'package:poc_client/time.dart';
 // import 'package:poc_client/locale.dart';
@@ -9,6 +9,7 @@ import 'package:poc_client/data.dart';
 import 'package:provider/provider.dart';
 import 'package:event_bus/event_bus.dart';
 import 'package:poc_client/env.dart';
+import 'package:poc_client/restapisend.dart';
 
 class Loginbtn extends StatelessWidget {
   //var formKey = GlobalKey<FormState>();
@@ -32,6 +33,7 @@ class Loginbtn extends StatelessWidget {
                 Environment();
                 eventBus.fire(Userdata(
                     data.name, data.timeVal, data.ampm, data.localVal));
+                //kaf();
 
                 Navigator.push(
                     context,
