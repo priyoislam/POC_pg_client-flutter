@@ -13,7 +13,7 @@ class TimeValue extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(5.0),
       // padding: EdgeInsets.symmetric(horizontal: 10.0),
-      width: MediaQuery.of(context).size.width * .5,
+      width: MediaQuery.of(context).size.width * .7,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black38),
         borderRadius: BorderRadius.circular(5.0),
@@ -23,13 +23,13 @@ class TimeValue extends StatelessWidget {
         children: [
           Flexible(
             flex: 2,
-            fit: FlexFit.tight,
+            fit: FlexFit.loose,
             child: DropdownButton<String>(
               value: data.timeVal,
               isExpanded: true,
               hint: Text('Enter Time'),
-              onChanged: (String? newValue) {
-                data.timeVal = newValue!;
+              onChanged: (String newValue) {
+                data.timeVal = newValue;
               },
               items: <String>[
                 '01.00',
@@ -57,7 +57,7 @@ class TimeValue extends StatelessWidget {
             flex: 1,
             fit: FlexFit.loose,
             child: ToggleSwitch(
-              minWidth: 50.0,
+              minWidth: 30.0,
               minHeight: 30.0,
               cornerRadius: 20.0,
               initialLabelIndex: data.ampm,

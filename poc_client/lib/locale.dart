@@ -25,8 +25,8 @@ class LocalValue extends StatelessWidget {
               value: data.localVal,
               isExpanded: true,
               hint: Text('Enter Location'),
-              onChanged: (String? newValue) {
-                data.localVal = newValue!;
+              onChanged: (String newValue) {
+                data.localVal = newValue;
 
                 // location(dropdownValue);
               },
