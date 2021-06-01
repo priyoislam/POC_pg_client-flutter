@@ -14,14 +14,20 @@ import 'package:http/http.dart' as http;
 //   }
 // }
 //print("try something");
+//"application/vnd.kafka.v2+json"
 
 Future<Album> fetchAlbum() async {
+  print("try something");
   final response1 =
       await http.get(Uri.parse('http://127.0.1.1:8082/topics'), headers: {
-    "Accept": "application/vnd.kafka.json.v2+json",
+    "Accept": "application/vnd.kafka.v2+json",
+    "access.control.allow.origin": "*",
+    "access.control.allow.methods": "GET,POST,PUT,DELETE,OPTIONS,HEAD"
   });
 
   print(response1);
+  print(response1.statusCode);
+  print(response1.body);
 
   if (response1.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -48,11 +54,12 @@ class Album {
     @required this.title,
   });
 
-  factory Album.fromJson(Map<String, dynamic> json) {
+  //factory Album.fromJson(Map<String, dynamic> json) {
+  factory Album.fromJson(List<dynamic> json) {
     return Album(
       //userId: json['userId'],
       // id: json['id'],
-      title: "son['topic']",
+      title: "['topic']",
     );
   }
 

@@ -1,6 +1,3 @@
-// @dart=2.9
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:poc_client/data.dart';
 import 'package:poc_client/thirdscreen.dart';
