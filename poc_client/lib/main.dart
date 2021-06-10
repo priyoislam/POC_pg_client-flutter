@@ -8,11 +8,16 @@ import 'package:poc_client/login.dart';
 import 'package:provider/provider.dart';
 import 'package:event_bus/event_bus.dart';
 import 'package:poc_client/env.dart';
+import 'package:poc_client/eventbus.dart';
 import 'package:http/http.dart';
 import 'package:poc_client/restapifetch.dart';
 import 'package:poc_client/restapisend.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  getIt.registerSingleton<MessageHub>(MessageHub());
+  runApp(MyApp());
+}
+
 EventBus eventBus = EventBus();
 
 class MyApp extends StatelessWidget {
@@ -50,33 +55,33 @@ class MyCustomFormState extends State<MyCustomForm> {
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return ChangeNotifierProvider(
-//       create: (context) => MyData(),
-//       child: Form(
-//         key: _formKey,
-//         child: Center(
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             // margin: new EdgeInsets.all(8.0),
-//             children: <Widget>[
-//               UserName(),
-//               TimeValue(),
-//               LocalValue(),
-//               Loginbtn(),
-
-//               //Loginbtn(),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-
   @override
   Widget build(BuildContext context) {
-    return ThirdScreen();
+    return ChangeNotifierProvider(
+      create: (context) => MyData(),
+      child: Form(
+        key: _formKey,
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            // margin: new EdgeInsets.all(8.0),
+            children: <Widget>[
+              UserName(),
+              TimeValue(),
+              LocalValue(),
+              Loginbtn(),
+
+              //Loginbtn(),
+            ],
+          ),
+        ),
+      ),
+    );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return ThirdScreen();
+  // }
 }

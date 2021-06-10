@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:event_bus/event_bus.dart';
 import 'package:poc_client/env.dart';
 import 'package:poc_client/restapisend.dart';
+import 'package:poc_client/eventbus.dart';
 
 class Loginbtn extends StatelessWidget {
   //var formKey = GlobalKey<FormState>();
@@ -30,9 +31,12 @@ class Loginbtn extends StatelessWidget {
               onPressed: () {
                 //getItemAndNavigate(BuildContext context) {
                 //Environment();
-                Environment();
-                eventBus.fire(Userdata(
+                //Environment();
+                hub.send(Userdata(
                     data.name, data.timeVal, data.ampm, data.localVal));
+                print('login' + data.name);
+
+                hub.send(data);
                 //kaf();
 
                 Navigator.push(

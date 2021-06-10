@@ -28,9 +28,6 @@ class SecondScreen extends StatefulWidget {
 }
 
 class SecondScreenState extends State<SecondScreen> {
-  Future<Album> futureAlbum;
-  Future<Album2> futureAlbum2;
-
   goBack(BuildContext context) {
     Navigator.pop(context);
   }
