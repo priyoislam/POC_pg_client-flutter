@@ -14,7 +14,7 @@ class ThirdScreen extends StatefulWidget {
 }
 
 Future<Album> futureAlbum;
-Future<Album2> futureAlbum2;
+Future<void> futureAlbum2;
 
 class ThirdScreenState extends State<ThirdScreen> {
   goBack(BuildContext context) {
@@ -24,8 +24,8 @@ class ThirdScreenState extends State<ThirdScreen> {
   @override
   void initState() {
     super.initState();
-    futureAlbum = fetchAlbum();
-    // futureAlbum2 = createAlbum("The Title");
+    //futureAlbum = fetchAlbum();
+    futureAlbum2 = senddata();
   }
 
 //String s=((ampmHolder == 0) ? "Good Evening": "Good Morning");
@@ -50,22 +50,10 @@ class ThirdScreenState extends State<ThirdScreen> {
                           children: <Widget>[
                             Center(
                                 child: Text(
-                              snapshot.data.title + " sadaa",
+                              snapshot.data.title,
                               style: TextStyle(fontSize: 22),
                               textAlign: TextAlign.center,
                             )),
-                            // Center(
-                            //     child: Text(
-                            //   snapshot.data.id.toString(),
-                            //   style: TextStyle(fontSize: 22),
-                            //   textAlign: TextAlign.center,
-                            // )),
-                            // Center(
-                            //     child: Text(
-                            //   snapshot.data.userId.toString(),
-                            //   style: TextStyle(fontSize: 22),
-                            //   textAlign: TextAlign.center,
-                            // )),
                           ]);
                     } else if (snapshot.hasError) {
                       return Text('${snapshot.error}');
@@ -75,32 +63,11 @@ class ThirdScreenState extends State<ThirdScreen> {
                   },
                 ),
               ),
-              // Center(
-              //   child: FutureBuilder<Album2>(
-              //     future: futureAlbum2,
-              //     builder: (context, snapshot) {
-              //       if (snapshot.hasData) {
-              //         return Text("Send Data " + snapshot.data.id);
-              //       } else if (snapshot.hasError) {
-              //         return Text('${snapshot.error}');
-              //       }
-
-              //       return CircularProgressIndicator();
-              //     },
-              //   ),
-              // ),
-              // Center(
-              //     child: Text(
-              //   fetchdata.getid().toString(),
-              //   style: TextStyle(fontSize: 22),
-              //   textAlign: TextAlign.center,
-              // )),
-
               ElevatedButton(
                 onPressed: () => goBack(context),
                 // color: Colors.lightBlue,
                 // textColor: Colors.white,
-                child: Text('Go Back To Previous Screen'),
+                child: Text('Go Back To Previous  Screen'),
               )
             ]));
   }
