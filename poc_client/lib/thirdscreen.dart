@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'dart:convert';
+
 import 'package:poc_client/restapifetch.dart';
 import 'package:poc_client/restapisend.dart';
+
 //import 'package:toggle_switch/toggle_switch.dart';
 
 class ThirdScreen extends StatefulWidget {
@@ -25,6 +26,7 @@ class ThirdScreenState extends State<ThirdScreen> {
   void initState() {
     super.initState();
     //futureAlbum = fetchAlbum();
+
     futureAlbum2 = senddata();
   }
 

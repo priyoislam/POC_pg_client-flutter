@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'dart:io';
-import 'dart:async';
 
 Future<Album> fetchAlbum() async {
-  //print("try something");
-
   final consumer = await http.post(
     Uri.parse('http://127.0.0.1:8082/consumers/flutterconsumer'),
     headers: <String, String>{
@@ -53,16 +49,13 @@ Future<Album> fetchAlbum() async {
           'http://127.0.0.1:8082/consumers/flutterconsumer/instances/my_consumer/records'),
       headers: {
         "Accept": "application/vnd.kafka.json.v2+json",
-        // "access.control.allow.origin": "*",
-        // "access.control.allow.methods": "GET,POST,PUT,DELETE,OPTIONS,HEAD"
       });
   print(response.statusCode);
   print(jsonDecode(response.body));
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    var data = json.decode(response.body);
-    // var rest = data["feed"]["entry"] as List;
+
     print(response.statusCode);
 
     return Album.fromJson(jsonDecode(response.body));
@@ -74,8 +67,6 @@ Future<Album> fetchAlbum() async {
 }
 
 class Album {
-  //final int userId;
-  //final int id;
   final String title;
 
   Album({
@@ -86,9 +77,6 @@ class Album {
 
   //factory Album.fromJson(Map<String, dynamic> json) {
   factory Album.fromJson(List<dynamic> json) {
-    return Album(
-        //userId: json['userId'],
-        // id: json['id'],
-        title: 'sda');
+    return Album(title: 'sda');
   }
 }

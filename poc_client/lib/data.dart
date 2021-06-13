@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 class MyData extends ChangeNotifier {
-  String _name = "1";
+  String _name;
   String _timeVal; //= "01.00";
   int _ampmindex = 0;
   String _localVal;

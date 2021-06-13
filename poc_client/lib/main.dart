@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:poc_client/data.dart';
-import 'package:poc_client/thirdscreen.dart';
 import 'package:poc_client/name.dart';
 import 'package:poc_client/time.dart';
-import 'package:poc_client/locale.dart';
+import 'package:poc_client/location.dart';
 import 'package:poc_client/login.dart';
 import 'package:provider/provider.dart';
 import 'package:event_bus/event_bus.dart';
-import 'package:poc_client/env.dart';
 import 'package:poc_client/eventbus.dart';
-import 'package:http/http.dart';
-import 'package:poc_client/restapifetch.dart';
-import 'package:poc_client/restapisend.dart';
 
 void main() {
   getIt.registerSingleton<MessageHub>(MessageHub());
+
   runApp(MyApp());
 }
 
@@ -71,8 +67,6 @@ class MyCustomFormState extends State<MyCustomForm> {
               TimeValue(),
               LocalValue(),
               Loginbtn(),
-
-              //Loginbtn(),
             ],
           ),
         ),

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'dart:convert';
-import 'package:poc_client/restapifetch.dart';
-import 'package:poc_client/restapisend.dart';
+
 import 'package:poc_client/thirdscreen.dart';
 //import 'package:toggle_switch/toggle_switch.dart';
-import 'package:poc_client/login.dart';
 
 class SecondScreen extends StatefulWidget {
   final nameHolder;
