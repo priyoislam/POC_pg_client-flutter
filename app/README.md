@@ -1,4 +1,4 @@
-# poc_client
+# app
 
 A new Flutter project.
 
